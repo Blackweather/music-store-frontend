@@ -1,0 +1,48 @@
+<form #albumForm="ngForm" *ngIf="album">
+  <table border="2">
+    <tr>
+      <td><label for="title">Title:</label></td>
+      <td>
+        <input type="text" id="title" name="title" [(ngModel)]="album.title">
+      </td>
+    </tr>
+    <tr>
+      <td><label for="band">Band:</label></td>
+      <td>
+        <select [(ngModel)]="album.band" id="band" name="band" [compareWith]="compareBands">
+          <option *ngFor="let band of availableBands" [ngValue]="band">
+            {{band.name}}
+          </option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="releaseDate">Release Date:</label></td>
+      <td>
+        <input type="text" id="releaseDate" name="releaseDate" [(ngModel)]="album.releaseDate">
+      </td>
+    </tr>
+    <tr>
+      <td><label for="genre">Genre:</label></td>
+      <td>
+        <select [(ngModel)]="album.genre" id="genre" name="genre">
+          <option *ngFor="let genre of genreKeys" [ngValue]="availableGenres[genre]">
+            {{availableGenres[genre]}}
+          </option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="price">Price</label></td>
+      <td>
+        <input type="text" id="price" name="price" [(ngModel)]="album.price">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button type="button" (click)="save()">Save</button>
+      </td>
+    </tr>
+  </table>
+</form>
+<button routerLink="/albums">Back</button>

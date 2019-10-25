@@ -1,0 +1,33 @@
+<table border="2">
+  <tr>
+    <th>ID</th>
+    <th>Title</th>
+    <th>Band</th>
+  </tr>
+  <tr *ngFor="let album of albums | async">
+    <td>
+      {{album.id}}
+    </td>
+
+    <td>
+      {{album.title}}
+    </td>
+
+    <td>
+      {{album.band.name}}
+    </td>
+
+    <td>
+      <button [routerLink]="['/albums', album.id]">Show</button>
+    </td>
+
+    <td>
+      <button [routerLink]="['/albums', album.id, 'edit']">Edit</button>
+    </td>
+
+    <td>
+      <button (click)="remove(album)">Delete</button>
+    </td>
+  </tr>
+</table>
+<button [routerLink]="['/albums', 'create']">Create</button>

@@ -1,0 +1,28 @@
+<form #bandForm="ngForm" *ngIf="band">
+  <table border="2">
+    <tr>
+      <td><label for="name">Name:</label></td>
+      <td>
+        <input type="text" id="name" name="name" [(ngModel)]="band.name">
+      </td>
+    </tr>
+    <tr>
+      <td><label for="nationality">Nationality:</label></td>
+      <td>
+        <input type="text" id="nationality" name="nationality" [(ngModel)]="band.nationality">
+      </td>
+    </tr>
+    <tr>
+      <td><label for="creationDate">Creation Date:</label></td>
+      <td>
+        <input type="text" id="creationDate" name="creationDate" [(ngModel)]="band.creationDate">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button type="button" (click)="save()">Save</button>
+      </td>
+    </tr>
+  </table>
+</form>
+<button routerLink="/bands">Back</button>

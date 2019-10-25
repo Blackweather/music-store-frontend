@@ -1,0 +1,16 @@
+<table border="2" *ngIf="band">
+  <tr>
+    <td>Name:</td>
+    <td>{{band.name}}</td>
+  </tr>
+  <tr>
+    <td>Nationality:</td>
+    <td>{{band.nationality}}</td>
+  </tr>
+  <tr>
+    <td>Creation Date:</td>
+    <td>{{band.creationDate}}</td>
+  </tr>
+</table>
+
+<button routerLink="/bands">Back</button>

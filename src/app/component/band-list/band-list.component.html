@@ -1,0 +1,28 @@
+<table border="2">
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+  </tr>
+  <tr *ngFor="let band of bands | async">
+    <td>
+      {{band.id}}
+    </td>
+
+    <td>
+      {{band.name}}
+    </td>
+
+    <td>
+      <button [routerLink]="['/bands', band.id]">Show</button>
+    </td>
+
+    <td>
+      <button [routerLink]="['/bands', band.id, 'edit']">Edit</button>
+    </td>
+
+    <td>
+      <button (click)="remove(band)">Delete</button>
+    </td>
+  </tr>
+</table>
+<button [routerLink]="['/bands', 'create']">Create</button>
